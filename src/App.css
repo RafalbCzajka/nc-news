@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+ul{
+  list-style: none;
+}
+
 header{
   display: flex;
   justify-content: space-between;
@@ -142,4 +146,24 @@ h1{
   background-color: var(--dark);
   -webkit-box-shadow: none;
   box-shadow: none;
+}
+
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0px;
+  width: 250px;
+  height: 100vh;
+  background: #28292c;
+  transition: transform 0.3s ease-in-out;
+  padding-top: 15vh;
+  padding-left: 2%;
+}
+
+.sidebar.closed {
+  transform: translateX(-100%);
+}
+
+.sidebar.open {
+  transform: translateX(0);
 }
