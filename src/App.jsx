@@ -2,7 +2,7 @@ import './App.css'
 import {BrowserRouter, Route, Routes} from "react-router"
 import Header from './components/Header'
 import Sidebar from './components/Sidebar'
-import ArticleList from './components/ArticleList'
+import ArticleListView from './components/ArticleListView'
 
 function App() {
 
@@ -11,7 +11,7 @@ function App() {
     <Header/>
     <Sidebar/>
     <Routes>
-      <Route path="/" element={<ArticleList/>}/>
+      <Route path="/" element={<ArticleListView/>}/>
     </Routes>
     </BrowserRouter>
   )

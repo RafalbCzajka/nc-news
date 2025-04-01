@@ -450,13 +450,17 @@ h1{
   }
 }
 
+.content{
+  margin-top: 4vw;
+  text-align: center;
+}
+
 #article-list{
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100vw;
-  margin-top: 4vw;
 }
 
 .article-card{
