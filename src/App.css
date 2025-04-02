@@ -517,4 +517,37 @@ h1{
   width: 95vw;
   margin: 0 auto;
   padding: 0 10px;
+  text-align: left;
+}
+
+.detailed-article-card .article-right {
+  text-align: right;
+}
+
+#comments-list {
+  display: grid;
+  gap: 5px;
+}
+
+.comment-card {
+  background-color: #0000008c;
+  width: 95vw;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 5px;
+}
+
+.comment-left {
+  text-align: left;
+  font-size: 1.2rem;
+  padding-bottom: 1.5px;
+}
+
+.comment-center {
+  text-align: center;
+}
+
+.comment-right {
+  text-align: right;
+  font-style: italic;
 }

@@ -21,8 +21,8 @@ export default function DetailedArticleCard({articleId}) {
             <p>{formattedDate}</p>
             <img src={article.article_img_url}/>
             <p>{article.body}</p>
-            <p>Votes: {article.votes}</p>
-            <p>Comments: {article.comment_count}</p>
+            <p className="article-right">Votes: {article.votes}</p>
+            <p className="article-right">Comments: {article.comment_count}</p>
         </section>
     )
 }
