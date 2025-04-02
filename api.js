@@ -22,4 +22,10 @@ const getArticle = (articleId) => {
     })
 }
 
-export {getTopics, getAllArticles, getArticle};
+const getComments = (articleId) => {
+    return api.get(`/articles/${articleId}/comments`).then(({data}) => {
+        return data.comments;
+    })
+}
+
+export {getTopics, getAllArticles, getArticle, getComments};
