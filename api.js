@@ -28,4 +28,11 @@ const getComments = (articleId) => {
     })
 }
 
-export {getTopics, getAllArticles, getArticle, getComments};
+const updateVoteCount = (articleId, voteType) => {
+    return api.patch(`/articles/${articleId}`, {inc_votes: voteType === 'up' ? 1 : -1,})
+    .then(({data}) => {
+        return data.article;
+    })
+}
+
+export {getTopics, getAllArticles, getArticle, getComments, updateVoteCount};
