@@ -531,6 +531,9 @@ h1{
 
 .comment-card {
   background-color: #0000008c;
+  width: 95vw;
+  max-width: 1200px;
+  margin: 0 auto;
   padding: 5px;
 }
 
