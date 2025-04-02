@@ -1,10 +1,10 @@
-import { getArticles } from "../../api"
+import { getAllArticles} from "../../api"
 import useApiRequest from "../hooks/useApiRequest"
 import ArticleCard from "./ArticleCard";
 import Loading from "./Loading";
 
 export default function ArticleList() {
-    const {data: articles, isLoading, error} = useApiRequest(getArticles);
+    const {data: articles, isLoading, error} = useApiRequest(getAllArticles);
 
     return (
         <section id="article-list">

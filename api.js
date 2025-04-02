@@ -10,10 +10,16 @@ const getTopics = () => {
     })
 }
 
-const getArticles = () => {
+const getAllArticles = () => {
     return api.get("/articles").then(({data}) => {
         return data.articles;
     })
 }
 
-export {getTopics, getArticles};
+const getArticle = (articleId) => {
+    return api.get(`/articles/${articleId}`).then(({data}) => {
+        return data.article;
+    })
+}
+
+export {getTopics, getAllArticles, getArticle};
