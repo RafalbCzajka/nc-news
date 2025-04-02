@@ -551,3 +551,9 @@ h1{
   text-align: right;
   font-style: italic;
 }
+
+.voting {
+  text-align: right;
+  margin: 0;
+  padding-right: 1%;
+}
