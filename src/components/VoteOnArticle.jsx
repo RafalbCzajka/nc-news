@@ -26,8 +26,8 @@ export default function VoteOnArticle({articleId, votes, setVotes}) {
     return (
         <div className="voting">
             {error && <p>{error.msg}</p>}
-            <button onClick={() => handleVote('up')} disabled={voting}>{voting ? 'Voting...' : '+1'}</button>
-            <button onClick={() => handleVote('down')} disabled={voting}>{voting ? 'Voting...' : '-1'}</button>
+            <button className="upvote-button" onClick={() => handleVote('up')} disabled={voting}>{voting ? 'Voting...' : '+1'}</button>
+            <button className="downvote-button" onClick={() => handleVote('down')} disabled={voting}>{voting ? 'Voting...' : '-1'}</button>
         </div>
     )
 }

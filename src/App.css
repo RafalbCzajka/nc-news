@@ -557,3 +557,14 @@ h1{
   margin: 0;
   padding-right: 1%;
 }
+
+.upvote-button {
+  color: white;
+  background-color: green;
+}
+
+.downvote-button {
+  color: white;
+  background-color: red;
+  margin-left: 5px;
+}
