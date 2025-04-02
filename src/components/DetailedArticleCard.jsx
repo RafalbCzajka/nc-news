@@ -14,7 +14,7 @@ export default function DetailedArticleCard({articleId}) {
     }
 
     return (
-        <section>
+        <section className="detailed-article-card">
             <h2>{article.title}</h2>
             <p>By {article.author}</p>
             <p>Topic: {article.topic}</p>
