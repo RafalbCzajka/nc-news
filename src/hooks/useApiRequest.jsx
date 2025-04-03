@@ -19,7 +19,7 @@ const useApiRequest = (apiFunction, ...args) => {
             .finally(() => {
                 setIsLoading(false);
             });
-    }, [...args]);
+    }, [JSON.stringify(args)]);
 
     return {data, isLoading, error};
 }
