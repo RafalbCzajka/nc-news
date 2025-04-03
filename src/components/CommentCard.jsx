@@ -8,7 +8,7 @@ export default function CommentCard({comment, canDelete, onDelete}) {
             <p className="comment-right">{formattedDate}</p>
             <p className="comment-right">Votes: {comment.votes}</p>
             {canDelete && (
-                <button onClick={onDelete}>Delete</button>
+                <button onClick={onDelete} className="comment-delete-button">Delete</button>
             )}
         </li>
     )

@@ -553,6 +553,20 @@ h1{
   font-style: italic;
 }
 
+.comment-delete-button {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+  margin-left: auto;
+}
+
+.comment-delete-button:hover {
+  background-color: darkred;
+}
+
 .voting {
   text-align: right;
   margin: 0;
