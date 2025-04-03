@@ -32,7 +32,6 @@ export default function DetailedArticleCard({articleId}) {
             <p>{article.body}</p>
             <p className="article-right">Votes: {votes}</p>
             <VoteOnArticle articleId={article.article_id} votes={votes} setVotes={setVotes}/>
-            <p className="article-right">Comments: {article.comment_count}</p>
         </section>
     )
 }

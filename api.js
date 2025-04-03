@@ -35,4 +35,14 @@ const updateVoteCount = (articleId, voteType) => {
     })
 }
 
-export {getTopics, getAllArticles, getArticle, getComments, updateVoteCount};
+const postComment = (articleId, commentBody, username) => {
+    return api.post(`/articles/${articleId}/comments`, {
+        username,
+        body: commentBody,
+    })
+    .then(({data}) => {
+        return data.comment;
+    })
+}
+
+export {getTopics, getAllArticles, getArticle, getComments, updateVoteCount, postComment};
