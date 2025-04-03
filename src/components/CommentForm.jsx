@@ -34,10 +34,10 @@ export default function CommentForm({articleId, setComments}) {
     }
 
     return (
-        <section>
-            <p>Post a new comment:</p>
+        <section className="new-comment-form">
             <form onSubmit={handleSubmit}>
-                <textarea value={comment} onChange={(e) => setComment(e.target.value)} placeholder="Write a comment..." required></textarea>
+                <label htmlFor="comment-input">Post a new comment</label>
+                <textarea id="comment-input" value={comment} onChange={(e) => setComment(e.target.value)} placeholder="Write a comment..." required></textarea>
                 <button type="submit" disabled={isPosting}>{isPosting ? "Posting..." : "Post Comment"}</button>
                 {error && <p>{error}</p>}
             </form>

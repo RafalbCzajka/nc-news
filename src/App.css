@@ -505,6 +505,7 @@ h1{
   display: block;
   background-color: #0000008c;
   margin: 0 auto;
+  padding: 1%;
   width: 100vw;
 }
 
@@ -567,4 +568,45 @@ h1{
   color: white;
   background-color: red;
   margin-left: 5px;
+}
+
+
+.new-comment-form {
+  background-color: #0000008c;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  justify-content: center;
+  height: auto;
+  margin: 1% auto;
+  padding: 2%;
+  width: 100%;
+}
+
+.new-comment-form label {
+  display: block;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+}
+
+.new-comment-form textarea {
+  width: 100%;
+  min-width: 200px;
+  max-width: 95%;
+  height: 60px;
+  padding: 10px;
+  font-size: 0.9rem;
+  resize: vertical;
+}
+
+.new-comment-form button {
+  width: 50%;
+  max-width: 160px;
+  padding: 10px 20px;
+  font-size: 16px;
+}
+
+.new-comment-form p {
+  color: white;
 }
