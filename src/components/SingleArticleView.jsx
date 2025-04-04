@@ -7,7 +7,7 @@ export default function SingleArticleView() {
 const {article_id} = useParams();
 
     return (
-        <main className="content">
+        <main>
             <DetailedArticleCard articleId={article_id}/>
             <CommentsSection articleId={article_id}/>
         </main>
