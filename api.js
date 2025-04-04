@@ -10,8 +10,15 @@ const getTopics = () => {
     })
 }
 
-const getAllArticles = (topic) => {
-    const url = topic ? `/articles?topic=${topic}` : "/articles";
+const getAllArticles = ({topic, sort_by, order}) => {
+    const params = new URLSearchParams();
+
+    if (topic) params.set("topic", topic);
+    if (sort_by) params.set("sort_by", sort_by);
+    if (order) params.set("order", order);
+
+    const url = `/articles?${params.toString()}`;
+
     return api.get(url).then(({data}) => {
         return data.articles;
     })

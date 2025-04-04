@@ -16,6 +16,7 @@ export default function ArticleCard({article}) {
             <p>Topic: {article.topic}</p>
             <p>{formattedDate}</p>
             <p>Votes: {article.votes}</p>
+            <p>{article.comment_count} comments</p>
         </li>
     )
 }
