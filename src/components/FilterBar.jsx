@@ -14,7 +14,7 @@ export default function FilterBar() {
     }
 
     return(
-        <section id="filter-bar">
+        <section className="filter-bar">
             <label>
                 Sort by: 
                 <select value={searchParams.get("sort_by") || "created_at"} onChange={handleSortChange}>
