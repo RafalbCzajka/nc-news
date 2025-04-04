@@ -7,7 +7,7 @@ export default function ArticleListView() {
     const topic = searchParams.get("topic");
 
     return (
-        <main className="content">
+        <main>
             <div className="article-header">
                 <h2>{topic ? `Articles about ${topic}` : "All Articles"}</h2>
                 <FilterBar />

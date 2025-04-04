@@ -3,17 +3,25 @@ import useApiRequest from "../hooks/useApiRequest";
 import Loading from "./Loading";
 import VoteOnArticle from "./VoteOnArticle";
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router";
 
 export default function DetailedArticleCard({articleId}) {
     const {data: article, isLoading, error} = useApiRequest(getArticle, articleId);
     const [votes, setVotes] = useState(0);
     const formattedDate = new Date(article.created_at).toLocaleDateString("en-GB")
+    const navigate = useNavigate();
 
     useEffect(() => {
         if (article) {
             setVotes(article.votes);
         }
     }, [article]);
+
+    useEffect(() => {
+        if (error?.response?.status === 404) {
+            navigate("/not-found")
+        }
+    }, [error, navigate])
     
     if (isLoading) {
         return (<Loading/>);

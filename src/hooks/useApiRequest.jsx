@@ -13,8 +13,7 @@ const useApiRequest = (apiFunction, ...args) => {
                 setData(data);
             })
             .catch((err) => {
-                console.log(err)
-                setError({status: 404, msg: "Something went wrong."})
+                setError(err);
             })
             .finally(() => {
                 setIsLoading(false);
