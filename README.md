@@ -1,12 +1,54 @@
-# React + Vite
+# NC News
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to **Nc News**, a Reddit-style news aggregation app where users may browse articles, view and post comments for specific articles, as well as having the ability to vote on articles.
 
-Currently, two official plugins are available:
+This is the front-end for the project built with **React** and using a [custom **RESTful API**](https://github.com/RafalbCzajka/nc-news-API) for data.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Live site
+[View the deployed site here](https://rafalbczajka-nc-news-project.netlify.app/)
 
-## Expanding the ESLint configuration
+![Netlify Status](https://api.netlify.com/api/v1/badges/5cb05aef-1193-4569-8ade-d89525559f83/deploy-status)
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+It may take a minute to load initially as the API is hosted on render with a free plan.
+
+## About the Project
+NC News is a full-stack web application where users may:
+- Browse a list of articles.
+- Filter articles by topic.
+- Sort articles by date, comment count, or vote count.
+- View individual articles with their full content and comment threads.
+- Vote on articles.
+- Post and delete comments.
+
+This portfolio project was created as part of a Digital Skills Bootcamp in Software Engineering provided by [Northcoders](https://northcoders.com/)
+
+## Technologies Used
+- React
+- Vite
+- Axios
+
+## Instructions for a local installation:
+### Minimum Requirements:
+- **Node.js** v23.3.0 or higher
+
+### How to run locally:
+
+1. Clone the repo:
+
+```bash
+git clone https://github.com/RafalbCzajka/nc-news.git
+cd nc-news
+```
+
+2. Install dependencies
+
+```bash
+npm install
+```
+
+3. Start development server
+```bash
+npm run dev
+```
+
+4. The app should now be running at ``http://localhost:5173``
