@@ -7,12 +7,22 @@
 html, body {
   display: flex;
   margin: 0;
-  padding: 0;
   box-sizing: border-box;
   overflow-x: hidden;
   justify-content: center;
   align-items: center;
   padding-top: 30px;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+button {
+  background-color: var(--button-bg);
+}
+
+.article-card, .comment-card, .new-comment-form, .detailed-article-card {
+  background-color: var(--card-bg);
+  color: var(--text-color);
 }
 
 @media (max-width: 400px) {
@@ -20,7 +30,6 @@ html, body {
     padding-top: 35px;
   }
 }
-
 
 ul{
   list-style: none;
@@ -535,8 +544,8 @@ h1{
 .article-card{
   display: flex;
   flex-direction: column;
-  background-color: #0000008c;
-  color: white;
+  /* background-color: #0000008c;
+  color: white; */
   padding: 16px;
   width: 100%;
   min-width: 0;
@@ -615,7 +624,7 @@ h1{
 
 .detailed-article-card {
   display: block;
-  background-color: #0000008c;
+  /* background-color: #0000008c; */
   margin: 0 auto;
   padding: 1%;
   width: 100vw;
@@ -644,7 +653,7 @@ h1{
 }
 
 .comment-card {
-  background-color: #0000008c;
+  /* background-color: #0000008c; */
   width: 95vw;
   max-width: 1200px;
   margin: 0 auto;
@@ -700,7 +709,7 @@ h1{
 
 
 .new-comment-form {
-  background-color: #0000008c;
+  /* background-color: #0000008c; */
   display: flex;
   flex-direction: column;
   gap: 15px;
@@ -715,7 +724,7 @@ h1{
   display: block;
   font-size: 18px;
   font-weight: bold;
-  color: white;
+  /* color: white; */
 }
 
 .new-comment-form textarea {
@@ -735,9 +744,9 @@ h1{
   font-size: 16px;
 }
 
-.new-comment-form p {
+/* .new-comment-form p {
   color: white;
-}
+} */
 
 .not-found{
   display: flex;
