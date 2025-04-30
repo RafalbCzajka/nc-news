@@ -60,7 +60,7 @@ button:focus-visible {
 /* Dark Theme Overrides */
 body.dark-theme {
   --bg-color: #242424;
-  --text-color: rgba(255, 255, 255, 0.87);
+  --text-color: rgb(255, 255, 255);
   --button-bg: #1a1a1a;
   --button-text-color: rgba(255, 255, 255, 0.87);
   --button-hover-border: #646cff;
