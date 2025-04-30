@@ -7,12 +7,22 @@
 html, body {
   display: flex;
   margin: 0;
-  padding: 0;
   box-sizing: border-box;
   overflow-x: hidden;
   justify-content: center;
   align-items: center;
   padding-top: 30px;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+button {
+  background-color: var(--button-bg);
+}
+
+.article-card, .comment-card, .new-comment-form, .detailed-article-card {
+  background-color: var(--card-bg);
+  color: var(--text-color);
 }
 
 @media (max-width: 400px) {
@@ -20,7 +30,6 @@ html, body {
     padding-top: 35px;
   }
 }
-
 
 ul{
   list-style: none;
@@ -37,7 +46,7 @@ header{
   height: 60px;
   padding: 10px;
   z-index: 1000;
-  background-color: #28292c;
+  background-color: var(--header-bg)
 }
 
 h1{
@@ -115,7 +124,7 @@ h1{
   position: relative;
   width: 100px;
   height: 50px;
-  --light: #d8dbe0;
+  --light: #b6b6b6;
   --dark: #28292c;
   --link: rgb(27, 129, 112);
   --link-hover: rgb(24, 94, 82);
@@ -125,10 +134,10 @@ h1{
   position: absolute;
   width: 100%;
   height: 50px;
-  background-color: var(--dark);
+  /* background-color: var(--dark); */
   border-radius: 25px;
   cursor: pointer;
-  border: 3px solid var(--dark);
+  /* border: 3px solid var(--dark); */
 }
 
 .checkbox {
@@ -196,7 +205,7 @@ h1{
   top: 0px;
   width: 250px;
   height: 100vh;
-  background: #28292c;
+  background: var(--header-bg);
   transition: transform 0.3s ease-in-out;
   padding-top: 100px;
   padding-left: 2%;
@@ -535,8 +544,8 @@ h1{
 .article-card{
   display: flex;
   flex-direction: column;
-  background-color: #0000008c;
-  color: white;
+  /* background-color: #0000008c;
+  color: white; */
   padding: 16px;
   width: 100%;
   min-width: 0;
@@ -615,7 +624,7 @@ h1{
 
 .detailed-article-card {
   display: block;
-  background-color: #0000008c;
+  /* background-color: #0000008c; */
   margin: 0 auto;
   padding: 1%;
   width: 100vw;
@@ -644,7 +653,7 @@ h1{
 }
 
 .comment-card {
-  background-color: #0000008c;
+  /* background-color: #0000008c; */
   width: 95vw;
   max-width: 1200px;
   margin: 0 auto;
@@ -700,7 +709,7 @@ h1{
 
 
 .new-comment-form {
-  background-color: #0000008c;
+  /* background-color: #0000008c; */
   display: flex;
   flex-direction: column;
   gap: 15px;
@@ -715,7 +724,7 @@ h1{
   display: block;
   font-size: 18px;
   font-weight: bold;
-  color: white;
+  /* color: white; */
 }
 
 .new-comment-form textarea {
@@ -735,9 +744,9 @@ h1{
   font-size: 16px;
 }
 
-.new-comment-form p {
+/* .new-comment-form p {
   color: white;
-}
+} */
 
 .not-found{
   display: flex;

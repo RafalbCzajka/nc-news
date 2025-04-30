@@ -1,4 +1,4 @@
-:root {
+/* :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -30,7 +30,81 @@ button:hover {
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
+} */
+
+:root {
+  --font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --line-height: 1.5;
+  --font-weight: 400;
+
+  /* Light Theme Defaults */
+  --bg-color: #dbdbdb;
+  --text-color: #000000;
+  --button-bg: #e0e0e0;
+  --button-text-color: #242424;
+  --button-hover-border: #005fc4;
+  --card-bg: #b1b1b18c;
+  --header-bg: #b6b6b6;
+
+  font-family: var(--font-family);
+  line-height: var(--line-height);
+  font-weight: var(--font-weight);
+  color: var(--text-color);
+  background-color: var(--bg-color);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
+
+/* Dark Theme Overrides */
+body.dark-theme {
+  --bg-color: #242424;
+  --text-color: rgb(255, 255, 255);
+  --button-bg: #1a1a1a;
+  --button-text-color: rgba(255, 255, 255, 0.87);
+  --button-hover-border: #646cff;
+  --card-bg: #0000008c;
+  --header-bg: #28292c;
+
+  color-scheme: dark;
+}
+
+/* Apply variables */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: var(--button-bg);
+  color: var(--button-text-color);
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+button:hover {
+  border-color: var(--button-hover-border);
+}
+
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+/* Example card styles using theme */
+.article-card, .comment-card, .new-comment-form {
+  background-color: var(--card-bg);
+  color: var(--text-color);
+}
+
 
 /* @media (prefers-color-scheme: light) {
   :root {
