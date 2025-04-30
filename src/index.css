@@ -44,6 +44,7 @@ button:focus-visible {
   --button-text-color: #242424;
   --button-hover-border: #005fc4;
   --card-bg: #b1b1b18c;
+  --header-bg: #b6b6b6;
 
   font-family: var(--font-family);
   line-height: var(--line-height);
@@ -65,6 +66,7 @@ body.dark-theme {
   --button-text-color: rgba(255, 255, 255, 0.87);
   --button-hover-border: #646cff;
   --card-bg: #0000008c;
+  --header-bg: #28292c;
 
   color-scheme: dark;
 }
