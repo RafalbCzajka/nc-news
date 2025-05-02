@@ -59,4 +59,10 @@ const deleteComment = (commentId) => {
     })
 }
 
-export {getTopics, getAllArticles, getArticle, getComments, updateVoteCount, postComment, deleteComment};
+const getUserByUsername = (username) => {
+    return api.get(`/users/${username}`).then(({data}) => {
+        return data.user;
+    })
+}
+
+export {getTopics, getAllArticles, getArticle, getComments, updateVoteCount, postComment, deleteComment, getUserByUsername};

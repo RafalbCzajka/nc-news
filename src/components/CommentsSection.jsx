@@ -1,4 +1,4 @@
-import { deleteComment, getComments } from "../../api";
+import { deleteComment, getComments, getUserByUsername } from "../../api";
 import useApiRequest from "../hooks/useApiRequest";
 import CommentCard from "./CommentCard";
 import Loading from "./Loading";
@@ -9,6 +9,7 @@ import { useLoggedInUser } from "../Contexts/LoggedInUserContext";
 export default function CommentsSection({ articleId }) {
     const { data: initialComments, isLoading, error } = useApiRequest(getComments, articleId);
     const [comments, setComments] = useState([]);
+    const [avatars, setAvatars] = useState({});
     const { loggedInUser } = useLoggedInUser();
 
     useEffect(() => {
@@ -16,6 +17,21 @@ export default function CommentsSection({ articleId }) {
             setComments(initialComments);
         }
     }, [initialComments])
+
+    useEffect(() => {
+        if (!comments.length) return;
+
+        const uniqueAuthors = [...new Set(initialComments.map(comment => comment.author))];
+
+        uniqueAuthors.forEach(author => {
+            if (!avatars[author]) {
+                getUserByUsername(author).then(user => {setAvatars(prev => ({...prev, [author]: user.avatar_url}))})
+                .catch(err => {
+                    console.log(`Failed to fetch avatar for ${author}:`, err)
+                });
+            }
+        })
+    }, [comments]);
 
 
     const handleDelete = async (commentId) => {
@@ -42,7 +58,7 @@ export default function CommentsSection({ articleId }) {
             {error && <p>{error.msg}</p>}
             <ul id="comments-list">
                 {comments.map((comment) => (
-                    <CommentCard key={comment.comment_id} comment={comment} canDelete={comment.author === loggedInUser} onDelete={() => handleDelete(comment.comment_id)} />
+                    <CommentCard key={comment.comment_id} comment={comment} avatarUrl={avatars[comment.author]} canDelete={comment.author === loggedInUser} onDelete={() => handleDelete(comment.comment_id)} />
                 ))}
             </ul>
         </section>
