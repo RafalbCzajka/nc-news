@@ -51,16 +51,23 @@ export default function CommentsSection({ articleId }) {
     }
 
     return (
-        <section>
-            <CommentForm articleId={articleId} setComments={setComments} />
-            <h4>Comments:</h4>
-            {isLoading && <Loading />}
-            {error && <p>{error.msg}</p>}
-            <ul id="comments-list">
-                {comments.map((comment) => (
-                    <CommentCard key={comment.comment_id} comment={comment} avatarUrl={avatars[comment.author]} canDelete={comment.author === loggedInUser} onDelete={() => handleDelete(comment.comment_id)} />
-                ))}
-            </ul>
+        <section style={{minHeight: "100vh", minWidth: "100vw", position: "relative"}}>
+            {isLoading ? (
+                <div>
+                    <Loading/>
+                </div>
+            ) : (
+                <>
+                    <CommentForm articleId={articleId} setComments={setComments} />
+                    <h4 style={{marginLeft: "1vw"}}>Comments:</h4>
+                    {error && <p>{error.msg}</p>}
+                    <ul id="comments-list">
+                        {comments.map((comment) => (
+                            <CommentCard key={comment.comment_id} comment={comment} avatarUrl={avatars[comment.author]} canDelete={comment.author === loggedInUser} onDelete={() => handleDelete(comment.comment_id)} />
+                        ))}
+                    </ul>
+                </>
+            )}
         </section>
     )
 }

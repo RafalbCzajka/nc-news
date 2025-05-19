@@ -21,14 +21,21 @@ export default function ArticleList() {
     }, [isLoading, articles, navigate])
 
     return (
-        <section id="article-list">
-            {isLoading && <Loading/>}
-            {error && <p>{error.msg}</p>}
-            <ul>
-                {articles.map((article) => (
-                    <ArticleCard key={article.article_id} article={article}/>
-                ))}
-            </ul>
+        <section id="article-list" style={{minHeight: "100vh", minWidth: "100vw", position: "relative"}}>
+            {isLoading ? (
+                <div>
+                    <Loading/>
+                </div>
+            ) : (
+                <>
+                    {error && <p>{error.msg}</p>}
+                    <ul>
+                        {articles.map((article) => (
+                            <ArticleCard key={article.article_id} article={article}/>
+                        ))}
+                    </ul>
+                </>
+            )}
         </section>
     )
 }
