@@ -23,23 +23,31 @@ export default function DetailedArticleCard({articleId}) {
         }
     }, [error, navigate])
     
-    if (isLoading) {
-        return (<Loading/>);
-    }
+    // if (isLoading) {
+    //     return (<Loading/>);
+    // }
     if (error) {
         return (<p>{error.msg}</p>)
     }
 
     return (
-        <section className="detailed-article-card">
-            <h2>{article.title}</h2>
-            <p>By {article.author}</p>
-            <p>Topic: {article.topic}</p>
-            <p>{formattedDate}</p>
-            <img src={article.article_img_url}/>
-            <p>{article.body}</p>
-            <p className="article-right">Votes: {votes}</p>
-            <VoteOnArticle articleId={article.article_id} votes={votes} setVotes={setVotes}/>
-        </section>
+        <>
+        {isLoading ? (
+            <div style={{minHeight: "100vh", minWidth: "100vw", position: "relative"}}>
+            <Loading/>
+            </div>
+        ) : (
+            <section className="detailed-article-card">
+                <h2>{article.title}</h2>
+                <p>By {article.author}</p>
+                <p>Topic: {article.topic}</p>
+                <p>{formattedDate}</p>
+                <img src={article.article_img_url}/>
+                <p>{article.body}</p>
+                <p className="article-right">Votes: {votes}</p>
+                <VoteOnArticle articleId={article.article_id} votes={votes} setVotes={setVotes}/>
+                </section>
+            )}
+        </>
     )
 }
