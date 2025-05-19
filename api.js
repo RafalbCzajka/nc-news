@@ -65,4 +65,11 @@ const getUserByUsername = (username) => {
     })
 }
 
-export {getTopics, getAllArticles, getArticle, getComments, updateVoteCount, postComment, deleteComment, getUserByUsername};
+const updateCommentVote = (commentId, voteType) => {
+    return api.patch(`/comments/${commentId}`, {inc_votes: voteType === 'up' ? 1 : -1})
+    .then(({data}) => {
+        return data.comment;
+    })
+}
+
+export {getTopics, getAllArticles, getArticle, getComments, updateVoteCount, postComment, deleteComment, getUserByUsername, updateCommentVote};
