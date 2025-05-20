@@ -5,11 +5,13 @@ import Sidebar from './components/Sidebar'
 import ArticleListView from './components/ArticleListView'
 import SingleArticleView from './components/SingleArticleView'
 import NotFoundPage from './components/NotFoundPage'
+import ScrollToTop from './components/scrollToTop'
 
 function App() {
 
   return (
     <BrowserRouter>
+      <ScrollToTop/>
       <Header />
       <Sidebar />
         <Routes>
