@@ -1,6 +1,5 @@
 import {useState, useEffect} from "react";
 import { postArticle, getTopics } from "../../api";
-import Loading from "./Loading";
 import useApiRequest from "../hooks/useApiRequest";
 import { useLoggedInUser } from "../Contexts/LoggedInUserContext";
 
@@ -50,7 +49,22 @@ export default function PostArticleForm({onSuccess, onclose}) {
         <form onSubmit={handleSubmit} className="post-article-form">
             {formError && <p>{formError}</p>}
 
-            <label>Title: <input type="text" name="title" value={formData.title} onChange={handleChange} required disabled={isSubmitting}/></label>
+            <label htmlFor="title">Title:</label>
+            <input id="title" type="text" name="title" value={formData.title} onChange={handleChange} required disabled={isSubmitting}/>
+
+            <label htmlFor="body">Body: </label>
+            <textarea id="body" name="body" value={formData.body} onChange={handleChange} required/>
+
+            <label htmlFor="topic">Topic: </label>
+            <select id="topic" name="topic" value={formData.topic} onChange={handleChange} required>
+                    <option value="">Select a topic</option>
+                    {topics.map((topic) => (
+                        <option key={topic.slug} value={topic.slug}>{topic.slug}</option>
+                    ))}
+                    </select>
+
+            <label htmlFor="article_img_url">Image URL (optional): </label>
+            <input id="article_img_url" name="article_img_url" value={formData.article_img_url} onChange={handleChange} placeholder="https://..."/>
 
             <button type="submit" disabled={isSubmitting}>{isSubmitting ? "Posting..." : "Post Article"}</button>
         </form>
