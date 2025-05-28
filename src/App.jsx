@@ -6,6 +6,9 @@ import ArticleListView from './components/ArticleListView'
 import SingleArticleView from './components/SingleArticleView'
 import NotFoundPage from './components/NotFoundPage'
 import ScrollToTop from './components/scrollToTop'
+import Modal from "react-modal";
+
+Modal.setAppElement('#root');
 
 function App() {
 

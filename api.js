@@ -72,4 +72,10 @@ const updateCommentVote = (commentId, voteType) => {
     })
 }
 
-export {getTopics, getAllArticles, getArticle, getComments, updateVoteCount, postComment, deleteComment, getUserByUsername, updateCommentVote};
+const postArticle = (article) => {
+    return api.post("/articles", article).then(({data}) => {
+        return data.article;
+    })
+}
+
+export {getTopics, getAllArticles, getArticle, getComments, updateVoteCount, postComment, deleteComment, getUserByUsername, updateCommentVote, postArticle};

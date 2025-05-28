@@ -43,7 +43,7 @@ button:focus-visible {
   --button-bg: #e0e0e0;
   --button-text-color: #242424;
   --button-hover-border: #005fc4;
-  --card-bg: #b1b1b18c;
+  --card-bg: hsla(0, 0%, 69%, 0.753);
   --header-bg: #b6b6b6;
 
   font-family: var(--font-family);
@@ -65,7 +65,7 @@ body.dark-theme {
   --button-bg: #1a1a1a;
   --button-text-color: rgba(255, 255, 255, 0.87);
   --button-hover-border: #646cff;
-  --card-bg: #0000008c;
+  --card-bg: hsla(0, 0%, 0%, 0.753);
   --header-bg: #28292c;
 
   color-scheme: dark;
