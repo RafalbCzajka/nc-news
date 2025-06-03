@@ -3,7 +3,7 @@ import {createContext, useContext, useState} from "react";
 const LoggedInUserContext = createContext();
 
 export function LoggedInUserProvider({children}) {
-    const [loggedInUser, setLoggedInUser] = useState("grumpy19"); //Hard coded existing user for now
+    const [loggedInUser, setLoggedInUser] = useState("guest"); //Hard coded existing user for now
 
     return (
         <LoggedInUserContext.Provider value={{loggedInUser, setLoggedInUser}}>
