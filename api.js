@@ -78,4 +78,8 @@ const postArticle = (article) => {
     })
 }
 
-export {getTopics, getAllArticles, getArticle, getComments, updateVoteCount, postComment, deleteComment, getUserByUsername, updateCommentVote, postArticle};
+const deleteArticle = (articleId) => {
+    return api.delete(`/articles/${articleId}`).then(({data}) => data);
+};
+
+export {getTopics, getAllArticles, getArticle, getComments, updateVoteCount, postComment, deleteComment, getUserByUsername, updateCommentVote, postArticle, deleteArticle};

@@ -2,12 +2,17 @@ import { useState } from "react";
 import { useNavigate } from "react-router";
 import Modal from "react-modal";
 import PostArticleForm from "./PostArticleForm";
+import { useSidebar } from "../Contexts/SidebarContext";
 
 export default function PostArticleModal() {
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const navigate = useNavigate();
+  const {setIsSidebarOpen} = useSidebar();
 
-  const openModal = () => setModalIsOpen(true);
+  const openModal = () => {
+    setIsSidebarOpen(false);
+    setModalIsOpen(true);
+  }
   const closeModal = () => setModalIsOpen(false);
 
   return (
