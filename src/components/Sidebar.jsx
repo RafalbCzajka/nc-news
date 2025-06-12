@@ -10,11 +10,12 @@ import PostArticleModal from "./PostArticleModal";
 Modal.setAppElement("#root");
 
 export default function Sidebar() {
-    const {isSidebarOpen} = useSidebar();
+    const {isSidebarOpen, setIsSidebarOpen} = useSidebar();
     const {data: topics, isLoading, error} = useApiRequest(getTopics);
 
     const navigate = useNavigate();
     const handleClick = () => {
+        setIsSidebarOpen(false);
         navigate("/");
     }
 

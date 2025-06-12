@@ -40,7 +40,7 @@ button:focus-visible {
   /* Light Theme Defaults */
   --bg-color: #dbdbdb;
   --text-color: #000000;
-  --button-bg: #e0e0e0;
+  --button-bg: #d0d0d0;
   --button-text-color: #242424;
   --button-hover-border: #005fc4;
   --card-bg: hsla(0, 0%, 69%, 0.753);
