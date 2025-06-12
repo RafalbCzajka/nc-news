@@ -861,3 +861,15 @@ h1{
 .modal form button[type="submit"]:hover {
   background-color: #3f96f3;
 }
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1rem;
+}
+
+.pagination button {
+  padding: 0.5rem 1rem;
+  background-color: var(--button-bg);
+}
