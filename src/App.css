@@ -209,7 +209,7 @@ h1{
   transition: transform 0.3s ease-in-out;
   padding-top: 100px;
   padding-left: 2%;
-  z-index: 2;
+  z-index: 100;
 }
 
 .sidebar.closed {
@@ -778,7 +778,7 @@ h1{
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 999;
+    z-index: 99;
     position: relative;
 }
 
