@@ -35,8 +35,8 @@ const getArticle = (articleId) => {
     })
 }
 
-const getComments = (articleId) => {
-    return api.get(`/articles/${articleId}/comments`).then(({data}) => {
+const getComments = (articleId, page, limit = 10) => {
+    return api.get(`/articles/${articleId}/comments?limit=${limit}&p=${page}`).then(({data}) => {
         return data.comments;
     })
 }

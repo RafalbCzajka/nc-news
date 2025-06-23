@@ -23,7 +23,7 @@ export default function CommentCard({comment, avatarUrl, canDelete, onDelete}) {
     }
 
     return (
-        <li className="comment-card">
+        <div className="comment-card">
             <div className="comment-left">
                 <p>{comment.author}</p>
                 {avatarUrl && (
@@ -42,6 +42,6 @@ export default function CommentCard({comment, avatarUrl, canDelete, onDelete}) {
             {canDelete && (
                 <button onClick={onDelete} className="comment-delete-button">Delete</button>
             )}
-        </li>
+        </div>
     )
 }
