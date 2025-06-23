@@ -1,35 +1,64 @@
 import { deleteComment, getComments, getUserByUsername } from "../../api";
-import useApiRequest from "../hooks/useApiRequest";
 import CommentCard from "./CommentCard";
 import Loading from "./Loading";
 import CommentForm from "./CommentForm";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import { useLoggedInUser } from "../Contexts/LoggedInUserContext";
 
 export default function CommentsSection({ articleId }) {
-    const { data: initialComments, isLoading, error } = useApiRequest(getComments, articleId);
     const [comments, setComments] = useState([]);
     const [avatars, setAvatars] = useState({});
     const { loggedInUser } = useLoggedInUser();
+    const [page, setPage] = useState(1);
+    const [isLoading, setIsLoading] = useState(true);
+    const [error, setError] = useState(null);
+    const [hasMore, setHasMore] = useState(true);
+
+    const observer = useRef();
+    const commentIds = useRef(new Set());
+
+    const lastCommentRef = useCallback((node) => {
+        if (isLoading) return;
+
+        if (observer.current) observer.current.disconnect();
+
+        observer.current = new IntersectionObserver(entries => {
+            if (entries[0].isIntersecting && hasMore) {
+                setPage(prev => prev + 1);
+            }
+        });
+
+        if (node) observer.current.observe(node);
+    }, [isLoading, hasMore]);
 
     useEffect(() => {
-        if (initialComments) {
-            setComments(initialComments);
-        }
-    }, [initialComments])
+        setIsLoading(true);
+        setError(null);
+        getComments(articleId, page, 10).then(newComments => {
+            const uniqueNewComments = newComments.filter(c => !commentIds.current.has(c.comment_id));
+            uniqueNewComments.forEach(c => commentIds.current.add(c.comment_id));
+            setComments(prev => [...prev, ...uniqueNewComments]);
+            setHasMore(newComments.length === 10);
+        }).catch(err => {
+            setError(err);
+        }).finally(() => {
+            setIsLoading(false);
+        });
+    }, [articleId, page]);
 
     useEffect(() => {
         if (!comments.length) return;
 
-        const uniqueAuthors = [...new Set(initialComments.map(comment => comment.author))];
+        // const uniqueAuthors = [...new Set(comments.map(comment => comment.author))];
+        const uniqueAuthors = [...new Set(comments.map(comment => comment.author).filter(Boolean))];
 
         uniqueAuthors.forEach(author => {
-            if (!avatars[author]) {
-                getUserByUsername(author).then(user => {setAvatars(prev => ({...prev, [author]: user.avatar_url}))})
-                .catch(err => {
-                    console.log(`Failed to fetch avatar for ${author}:`, err)
-                });
-            }
+            if (!author || avatars[author]) return;
+
+            getUserByUsername(author).then(user => {setAvatars(prev => ({...prev, [author]: user.avatar_url}))})
+            .catch(err => {
+                console.log(`Failed to fetch avatar for ${author}:`, err)
+            });
         })
     }, [comments]);
 
@@ -52,22 +81,23 @@ export default function CommentsSection({ articleId }) {
 
     return (
         <section style={{minHeight: "100vh", minWidth: "100vw", position: "relative"}}>
-            {isLoading ? (
-                <div>
-                    <Loading/>
-                </div>
-            ) : (
                 <>
                     <CommentForm articleId={articleId} setComments={setComments} />
                     <h4 style={{marginLeft: "1vw"}}>Comments:</h4>
                     {error && <p>{error.msg}</p>}
+                    {!comments.length && !isLoading && <p style={{ marginLeft: "1vw" }}>No comments yet.</p>}
                     <ul id="comments-list">
-                        {comments.map((comment) => (
-                            <CommentCard key={comment.comment_id} comment={comment} avatarUrl={avatars[comment.author]} canDelete={comment.author === loggedInUser} onDelete={() => handleDelete(comment.comment_id)} />
-                        ))}
+                        {comments.map((comment, index) => {
+                            const isLast = index === comments.length - 1;
+                            return (
+                                <li key={comment.comment_id} ref={isLast ? lastCommentRef : null}>
+                                    <CommentCard comment={comment} avatarUrl={avatars[comment.author]} canDelete={comment.author === loggedInUser} onDelete={() => handleDelete(comment.comment_id)} />
+                                </li>
+                            )   
+                        })}
                     </ul>
+                    {hasMore && !isLoading && <Loading/>}
                 </>
-            )}
         </section>
     )
 }
