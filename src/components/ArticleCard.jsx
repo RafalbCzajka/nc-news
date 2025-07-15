@@ -11,12 +11,12 @@ export default function ArticleCard({article}) {
     return (
         <li className="article-card" onClick={handleClick}>
             <h3>{article.title}</h3>
-            <p>By {article.author}</p>
+            <p className="font-body">By {article.author}</p>
             <img src={article.article_img_url}/>
-            <p>Topic: {article.topic}</p>
-            <p>{formattedDate}</p>
-            <p>Votes: {article.votes}</p>
-            <p>{article.comment_count} comments</p>
+            <p className="font-body">Topic: {article.topic}</p>
+            <p className="font-body">{formattedDate}</p>
+            <p className="font-body">Votes: {article.votes}</p>
+            <p className="font-body">{article.comment_count} comments</p>
         </li>
     )
 }

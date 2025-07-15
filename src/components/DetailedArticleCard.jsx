@@ -38,11 +38,11 @@ export default function DetailedArticleCard({articleId, onDelete}) {
         ) : (
             <section className="detailed-article-card">
                 <h2>{article.title}</h2>
-                <p>By {article.author}</p>
-                <p>Topic: {article.topic}</p>
-                <p>{formattedDate}</p>
+                <p className="font-body">By {article.author}</p>
+                <p className="font-body">Topic: {article.topic}</p>
+                <p className="font-body">{formattedDate}</p>
                 <img src={article.article_img_url}/>
-                <p>{article.body}</p>
+                <p className="font-body">{article.body}</p>
                 <p className="article-right">Votes: {votes}</p>
                 <VoteOnArticle articleId={article.article_id} votes={votes} setVotes={setVotes}/>
                 {loggedInUser === article.author && (

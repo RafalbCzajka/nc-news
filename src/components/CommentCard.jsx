@@ -30,7 +30,7 @@ export default function CommentCard({comment, avatarUrl, canDelete, onDelete}) {
                     <img src={avatarUrl} alt={`${comment.author}'s avatar`} className="comment-avatar"/>
                 )}
             </div>
-            <p className="comment-center">{comment.body}</p>
+            <p className="comment-center font-body">{comment.body}</p>
             <p className="comment-right">{formattedDate}</p>
             <p className="comment-right">Votes: {votes}</p>
             {!canDelete && (
