@@ -64,13 +64,13 @@ button:focus-visible {
 
 /* Dark Theme Overrides */
 body.dark-theme {
-  --bg-color: #242424;
+  --bg-color: #081329;
   --text-color: rgb(255, 255, 255);
-  --button-bg: #1a1a1a;
+  --button-bg: #060e1f;
   --button-text-color: rgba(255, 255, 255, 0.87);
   --button-hover-border: #646cff;
   --card-bg: hsla(0, 0%, 0%, 0.753);
-  --header-bg: #28292c;
+  --header-bg: #060e1f;
 
   color-scheme: dark;
 }
