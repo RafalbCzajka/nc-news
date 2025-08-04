@@ -69,7 +69,7 @@ body.dark-theme {
   --button-bg: #060e1f;
   --button-text-color: rgba(255, 255, 255, 0.87);
   --button-hover-border: #646cff;
-  --card-bg: hsla(0, 0%, 0%, 0.753);
+  --card-bg: #03060ef3;
   --header-bg: #060e1f;
 
   color-scheme: dark;
