@@ -2,7 +2,6 @@ import SidebarButton from "./SidebarButton"
 import { getTopics } from "../../api";
 import { useSidebar } from "../Contexts/SidebarContext";
 import useApiRequest from "../hooks/useApiRequest"
-import Loading from "./Loading";
 import { useNavigate } from "react-router";
 import Modal from "react-modal";
 import PostArticleModal from "./PostArticleModal";
@@ -21,7 +20,7 @@ export default function Sidebar() {
 
     return (
         <aside id="sidebar" className={`sidebar ${isSidebarOpen ? "open" : "closed"}`}>
-            {isLoading && <Loading/>}
+            {isLoading && <p>Loading...</p>}
             {error && <p>{error.msg}</p>}
             <PostArticleModal/>
             <h3>Topics:</h3>

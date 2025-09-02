@@ -3,6 +3,7 @@ import { getAllArticles} from "../../api"
 import useApiRequest from "../hooks/useApiRequest"
 import ArticleCard from "./ArticleCard";
 import Loading from "./Loading";
+import ArticleCardSkeleton from "./ArticleCardSkeleton";
 import { useSearchParams, useNavigate } from "react-router";
 
 export default function ArticleList() {
@@ -39,9 +40,11 @@ export default function ArticleList() {
     return (
         <section id="article-list" style={{minHeight: "100vh", minWidth: "100vw", position: "relative"}}>
             {isLoading ? (
-                <div>
-                    <Loading/>
-                </div>
+                <ul>
+                    {[...Array(limit)].map((_, i) => (
+                        <ArticleCardSkeleton key={i} />
+                    ))}
+                </ul>
             ) : (
                 <>
                     {error && <p>{error.msg}</p>}
