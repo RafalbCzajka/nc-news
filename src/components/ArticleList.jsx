@@ -13,7 +13,7 @@ export default function ArticleList() {
     const sortBy = searchParams.get("sort_by") || "created_at";
     const order = searchParams.get("order") || "desc";
     const page = parseInt(searchParams.get("page") || 1);
-    const limit = 15;
+    const limit = 21;
 
     const {data, isLoading, error} = useApiRequest(getAllArticles, {topic: topic, sort_by: sortBy, order: order, page, limit});
 
