@@ -2,6 +2,7 @@ import { getArticle } from "../../api";
 import { useLoggedInUser } from "../Contexts/LoggedInUserContext";
 import useApiRequest from "../hooks/useApiRequest";
 import Loading from "./Loading";
+import DetailedArticleSkeleton from "./DetailedArticleSkeleton"
 import VoteOnArticle from "./VoteOnArticle";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router";
@@ -32,9 +33,7 @@ export default function DetailedArticleCard({articleId, onDelete}) {
     return (
         <>
         {isLoading ? (
-            <div style={{minHeight: "100vh", minWidth: "100vw", position: "relative"}}>
-            <Loading/>
-            </div>
+            <DetailedArticleSkeleton/>
         ) : (
             <section className="detailed-article-card">
                 <h2>{article.title}</h2>
