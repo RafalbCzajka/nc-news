@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { updateCommentVote } from "../../api";
+import { BiSolidUpvote, BiSolidDownvote } from "react-icons/bi";
 
 export default function CommentCard({comment, avatarUrl, canDelete, onDelete}) {
     const formattedDate = new Date(comment.created_at).toLocaleDateString("en-GB");
@@ -35,8 +36,8 @@ export default function CommentCard({comment, avatarUrl, canDelete, onDelete}) {
             <p className="comment-right">Votes: {votes}</p>
             {!canDelete && (
                 <div>
-                    <button className="upvote-button" onClick={() => handleVote('up')} disabled={hasVoted}>+1</button>
-                    <button className="downvote-button" onClick={() => handleVote('down')} disabled={hasVoted}>-1</button>
+                    <button className="upvote-button" onClick={() => handleVote('up')} disabled={hasVoted}><BiSolidUpvote /></button>
+                    <button className="downvote-button" onClick={() => handleVote('down')} disabled={hasVoted}><BiSolidDownvote /></button>
                 </div>
             )}
             {canDelete && (

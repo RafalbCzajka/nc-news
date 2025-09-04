@@ -1,7 +1,6 @@
 import { getArticle } from "../../api";
 import { useLoggedInUser } from "../Contexts/LoggedInUserContext";
 import useApiRequest from "../hooks/useApiRequest";
-import Loading from "./Loading";
 import DetailedArticleSkeleton from "./DetailedArticleSkeleton"
 import VoteOnArticle from "./VoteOnArticle";
 import { useState, useEffect } from "react";

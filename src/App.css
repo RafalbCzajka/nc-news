@@ -751,14 +751,24 @@ h1{
 }
 
 .upvote-button {
-  color: white;
-  background-color: green;
+  color: var(--text-color);
+  background-color: var(--button-bg);
+  border: 2px solid green;
+}
+
+.upvote-button:hover {
+  color: green;
 }
 
 .downvote-button {
-  color: white;
-  background-color: red;
+  color: var(--text-color);
+  background-color: var(--button-bg);
+  border: 2px solid red;
   margin-left: 5px;
+}
+
+.downvote-button:hover {
+  color: red;
 }
 
 
