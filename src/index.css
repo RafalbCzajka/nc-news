@@ -42,13 +42,13 @@ button:focus-visible {
   --font-weight: 400;
 
   /* Light Theme Defaults */
-  --bg-color: #dbdbdb;
-  --text-color: #000000;
-  --button-bg: #d0d0d0;
-  --button-text-color: #242424;
+  --bg-color: #e1e7f0;
+  --text-color: #111111;
+  --button-bg: #c0c8e0;
+  --button-text-color: #1a1a1a;
   --button-hover-border: #005fc4;
-  --card-bg: hsla(0, 0%, 69%, 0.753);
-  --header-bg: #b6b6b6;
+  --card-bg: #fbfcfdfa;
+  --header-bg: #dae3f5;
 
   font-family: var(--font-family);
   line-height: var(--line-height);
@@ -71,6 +71,14 @@ body.dark-theme {
   --button-hover-border: #646cff;
   --card-bg: #03060ef3;
   --header-bg: #060e1f;
+
+  /* --bg-color: #040914;
+  --text-color: rgb(255, 255, 255);
+  --button-bg: #060e1f;
+  --button-text-color: rgba(255, 255, 255, 0.87);
+  --button-hover-border: #005fc4;
+  --card-bg: #081329f1;
+  --header-bg: #03030a; */
 
   color-scheme: dark;
 }
