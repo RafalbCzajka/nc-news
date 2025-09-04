@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { updateVoteCount } from "../../api";
+import { BiSolidUpvote, BiSolidDownvote } from "react-icons/bi";
+
 
 export default function VoteOnArticle({articleId, votes, setVotes}) {
     const [voting, setVoting] = useState(false);
@@ -26,8 +28,8 @@ export default function VoteOnArticle({articleId, votes, setVotes}) {
     return (
         <div className="voting">
             {error && <p>{error.msg}</p>}
-            <button className="upvote-button" onClick={() => handleVote('up')} disabled={voting}>{voting ? 'Voting...' : '+1'}</button>
-            <button className="downvote-button" onClick={() => handleVote('down')} disabled={voting}>{voting ? 'Voting...' : '-1'}</button>
+            <button className="upvote-button" onClick={() => handleVote('up')} disabled={voting}>{voting ? 'Voting...' : <BiSolidUpvote />}</button>
+            <button className="downvote-button" onClick={() => handleVote('down')} disabled={voting}>{voting ? 'Voting...' : <BiSolidDownvote />}</button>
         </div>
     )
 }

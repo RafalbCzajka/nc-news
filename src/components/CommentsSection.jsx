@@ -49,7 +49,6 @@ export default function CommentsSection({ articleId }) {
     useEffect(() => {
         if (!comments.length) return;
 
-        // const uniqueAuthors = [...new Set(comments.map(comment => comment.author))];
         const uniqueAuthors = [...new Set(comments.map(comment => comment.author).filter(Boolean))];
 
         uniqueAuthors.forEach(author => {
@@ -83,7 +82,7 @@ export default function CommentsSection({ articleId }) {
         <section style={{minHeight: "100vh", minWidth: "100vw", position: "relative"}}>
                 <>
                     <CommentForm articleId={articleId} setComments={setComments} />
-                    <h4 style={{marginLeft: "1vw"}}>Comments:</h4>
+                    <h4 style={{marginLeft: "1.5vw"}}>Comments:</h4>
                     {error && <p>{error.msg}</p>}
                     {!comments.length && !isLoading && <p style={{ marginLeft: "1vw" }}>No comments yet.</p>}
                     <ul id="comments-list">

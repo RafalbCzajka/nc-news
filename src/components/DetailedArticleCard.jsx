@@ -1,7 +1,7 @@
 import { getArticle } from "../../api";
 import { useLoggedInUser } from "../Contexts/LoggedInUserContext";
 import useApiRequest from "../hooks/useApiRequest";
-import Loading from "./Loading";
+import DetailedArticleSkeleton from "./DetailedArticleSkeleton"
 import VoteOnArticle from "./VoteOnArticle";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router";
@@ -32,21 +32,19 @@ export default function DetailedArticleCard({articleId, onDelete}) {
     return (
         <>
         {isLoading ? (
-            <div style={{minHeight: "100vh", minWidth: "100vw", position: "relative"}}>
-            <Loading/>
-            </div>
+            <DetailedArticleSkeleton/>
         ) : (
             <section className="detailed-article-card">
                 <h2>{article.title}</h2>
-                <p>By {article.author}</p>
-                <p>Topic: {article.topic}</p>
-                <p>{formattedDate}</p>
+                <p className="font-body">By {article.author}</p>
+                <p className="font-body">Topic: {article.topic}</p>
+                <p className="font-body">{formattedDate}</p>
                 <img src={article.article_img_url}/>
-                <p>{article.body}</p>
+                <p className="font-body">{article.body}</p>
                 <p className="article-right">Votes: {votes}</p>
                 <VoteOnArticle articleId={article.article_id} votes={votes} setVotes={setVotes}/>
                 {loggedInUser === article.author && (
-                    <button onClick={onDelete}>Delete Article</button>
+                    <button className="article-delete-button" onClick={onDelete}>Delete Article</button>
                 )}
                 </section>
             )}

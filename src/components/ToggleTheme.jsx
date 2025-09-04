@@ -5,7 +5,7 @@ export default function ToggleTheme() {
     return (
         <div id="toggle-theme">
         <label className="switch-label">
-            <input type="checkbox" className="checkbox" checked={isDarkTheme} onChange={() => setTheme(prev => !prev)}/>
+            <input type="checkbox" className="checkbox" checked={!isDarkTheme} onChange={() => setTheme(prev => !prev)}/>
                 <span className="slider"></span>
         </label>
     </div>
