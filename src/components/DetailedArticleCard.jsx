@@ -44,7 +44,7 @@ export default function DetailedArticleCard({articleId, onDelete}) {
                 <p className="article-right">Votes: {votes}</p>
                 <VoteOnArticle articleId={article.article_id} votes={votes} setVotes={setVotes}/>
                 {loggedInUser === article.author && (
-                    <button onClick={onDelete}>Delete Article</button>
+                    <button className="article-delete-button" onClick={onDelete}>Delete Article</button>
                 )}
                 </section>
             )}

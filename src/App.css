@@ -731,9 +731,9 @@ h1{
 }
 
 .comment-delete-button {
-  background-color: red;
-  color: white;
-  border: none;
+  color: var(--text-color);
+  background-color: var(--button-bg);
+  border: 2px solid red;
   padding: 5px 10px;
   border-radius: 5px;
   transition: background-color 0.3s;
@@ -742,6 +742,8 @@ h1{
 
 .comment-delete-button:hover {
   background-color: darkred;
+  color: white;
+  border: 2px solid red;
 }
 
 .voting {
@@ -935,5 +937,25 @@ h1{
 
 .pagination button {
   padding: 0.5rem 1rem;
+  background-color: var(--button-bg);
+}
+
+.article-delete-button {
+  color: var(--text-color);
+  background-color: var(--button-bg);
+  border: 2px solid red;
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+  margin-left: auto;
+}
+
+.article-delete-button:hover {
+  background-color: darkred;
+  color: white;
+  border: 2px solid red;
+}
+
+select {
   background-color: var(--button-bg);
 }
