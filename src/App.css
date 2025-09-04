@@ -773,15 +773,16 @@ h1{
 
 
 .new-comment-form {
-  /* background-color: #0000008c; */
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  justify-content: center;
   height: auto;
   margin: 1% auto;
   padding: 2%;
-  width: 100%;
+  max-width: 98%;
+}
+
+.new-comment-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .new-comment-form label {
@@ -793,8 +794,6 @@ h1{
 
 .new-comment-form textarea {
   width: 100%;
-  min-width: 200px;
-  max-width: 95%;
   height: 60px;
   padding: 10px;
   font-size: 0.9rem;
@@ -806,6 +805,7 @@ h1{
   max-width: 160px;
   padding: 10px 20px;
   font-size: 16px;
+  align-self: flex-end;
 }
 
 /* .new-comment-form p {
