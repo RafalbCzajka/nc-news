@@ -58,6 +58,7 @@ h1{
   text-align: center;
   white-space: nowrap;
   color: var(--text-color);
+  text-shadow: 3px 3px 0 #007bff;
   font-size: 2rem;
 }
 
@@ -137,7 +138,7 @@ h1{
   /* background-color: var(--dark); */
   border-radius: 25px;
   cursor: pointer;
-  /* border: 3px solid var(--dark); */
+  border: 3px solid #007bff;
 }
 
 .checkbox {
