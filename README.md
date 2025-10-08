@@ -19,8 +19,32 @@ NC News is a full-stack web application where users may:
 - View individual articles with their full content and comment threads.
 - Vote on articles.
 - Post and delete comments.
+- Toggle the sitewide theme between light and dark. (By default uses system theme)
+- Vote on comments.
+- Post new articles to the site.
+- Delete any article posted by the guest user.
+
 
 This portfolio project was created as part of a Digital Skills Bootcamp in Software Engineering provided by [Northcoders](https://northcoders.com/)
+
+## Changes made after the bootcamp
+The original front-end portion of this project was built over the span of a week, however after the bootcamp I returned to work on this project more to add more functionality and refine the visuals.
+
+The changes made include:
+- Implementation of the theme toggle functionality and addition of a light theme.
+- Default theme set to system theme.
+- Added user avatars to comment cards.
+- Implemented voting on comments.
+- Implemented the ability for users to post their own articles with a modal which is accessible anywhere on the site.
+- Created a new guest account to prevent guest users from deleting any of the existing content.
+- Implemented the delete article function which displays in the detailed article view on any article created by the guest user.
+- Updated sidebar behaviour so that it closes automatically when any button on the sidebar is clicked.
+- Implemented pagination to the all articles view with navigation controls at the bottom of the page.
+- Implemented pagination to comments with infinite scroll so that new comments are loaded up to 10 at a time as the user scrolls down.
+- Added a message that displays instead of comment cards if there are no comments.
+- Implemented a major visual overhaul with new colour schemes, new fonts, loading animation replaced with loading skeletons, as well as other sitewide visual changes.
+- Improved usability by adding a border around the toggle theme slider so that users know it is there.
+- Added hover text and aria labels to the toggle theme and toggle sidebar buttons to improve accessibility.
 
 ## Technologies Used
 - React
